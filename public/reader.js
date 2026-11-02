@@ -1,15 +1,8 @@
-'use strict';
-(async()=>{
- try {
-  const r=await fetch('episodes.json');if(!r.ok)return;
-  const {episodes}=await r.json();const published=episodes.filter(e=>e.status==='published'&&e.approved===true);
-  const id=new URLSearchParams(location.search).get('episode');const e=published.find(e=>e.id===id);if(!e)return;
-  const root=document.getElementById('reader');root.replaceChildren();document.title=`${e.title} — KRATU HERO`;
-  const head=document.createElement('div');head.className='reader-heading';const h=document.createElement('h1');h.textContent=e.title;head.append(h);root.append(head);
-  for(const [i,panel] of e.panels.entries()){const img=document.createElement('img');img.src=panel.src;img.alt=panel.alt;img.width=panel.width||1080;img.height=panel.height||1350;img.loading=i<2?'eager':'lazy';root.append(img);}
-  if(e.transcript){const d=document.createElement('details');d.style.padding='25px';const s=document.createElement('summary');s.textContent='Read episode transcript';const p=document.createElement('p');p.textContent=e.transcript;d.append(s,p);root.append(d);}
-  const end=document.createElement('nav');end.className='reader-end';end.setAttribute('aria-label','Episode navigation');const n=published.indexOf(e);
-  for(const [label,item] of [['← PREVIOUS',published[n-1]],['NEXT →',published[n+1]]]){if(item){const a=document.createElement('a');a.href=`read.html?episode=${encodeURIComponent(item.id)}`;a.textContent=label;end.append(a);}}root.append(end);
-  window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-innerHeight;const v=total>0?Math.min(100,Math.round(scrollY/total*100)):100;document.getElementById('progress').value=v;try{localStorage.setItem('kratu-reading',JSON.stringify({id:e.id,progress:v}));}catch{}},{passive:true});
- }catch{/* No false episode or completion state when manifest is unavailable. */}
+"use strict";
+(async()=>{const root=document.getElementById('reader'),drawer=document.getElementById('episodes'),jump=document.getElementById('jump');let openedWithHistory=false;
+function closeDrawer(){if(!drawer.open)return;drawer.close();jump.focus();if(openedWithHistory){openedWithHistory=false;history.back();}}
+jump.addEventListener('click',()=>{if(drawer.open){closeDrawer();return;}drawer.showModal();history.pushState({episodeDrawer:true},'',location.href);openedWithHistory=true;});
+drawer.addEventListener('cancel',e=>{e.preventDefault();closeDrawer();});drawer.addEventListener('click',e=>{if(e.target===drawer){const r=drawer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDrawer();}});window.addEventListener('popstate',()=>{openedWithHistory=false;if(drawer.open){drawer.close();jump.focus();}});
+try{const response=await fetch('episodes.json',{cache:'no-cache'});if(!response.ok)throw Error('manifest');const data=await response.json();const episodes=data.episodes.filter(e=>e.status==='published'&&e.approved===true);const requested=new URLSearchParams(location.search).get('episode');const episode=requested?episodes.find(e=>e.id===requested):episodes[episodes.length-1];const list=document.getElementById('episode-list');for(const e of [...episodes].reverse()){const a=document.createElement('a');a.href='read.html?episode='+encodeURIComponent(e.id);const image=document.createElement('img');image.src=e.thumbnail;image.alt='';image.width=72;image.height=90;const label=document.createElement('span'),number=document.createElement('small');number.textContent='EPISODE #'+String(e.number).padStart(3,'0');label.append(number,document.createTextNode(e.title));a.append(image,label);list.append(a);}root.replaceChildren();if(!episode){const p=document.createElement('p');p.className='unavailable';p.textContent='This episode is not available. Choose an episode below.';root.append(p);return;}document.title=episode.title+' — KRATU HERO';root.setAttribute('aria-label','Episode #'+episode.id+' — '+episode.title);for(const [i,page] of episode.panels.entries()){const image=document.createElement('img');image.className='page';image.src=page.src;image.alt=page.alt;image.width=page.width;image.height=page.height;image.loading=i<2?'eager':'lazy';if(i===0)image.fetchPriority='high';root.append(image);}}
+catch{const p=document.createElement('p');p.className='unavailable';p.textContent='The episode could not load. Please refresh to try again.';root.append(p);}
 })();

@@ -1,1 +1,76 @@
-{"schemaVersion":1,"episodes":[]}
+{
+  "schemaVersion": 1,
+  "episodes": [
+    {
+      "id": "001",
+      "number": 1,
+      "title": "Famous. Almost.",
+      "status": "published",
+      "approved": true,
+      "version": "v5",
+      "thumbnail": "episodes/001-v5/page-01.webp",
+      "panels": [
+        {
+          "src": "episodes/001-v5/page-01.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 1 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-02.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 2 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-03.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 3 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-04.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 4 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-05.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 5 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-06.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 6 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-07.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 7 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-08.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 8 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-09.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 9 of 10",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "episodes/001-v5/page-10.webp",
+          "alt": "KRATU HERO \u2014 Famous. Almost. \u2014 page 10 of 10",
+          "width": 1080,
+          "height": 1350
+        }
+      ]
+    }
+  ]
+}
