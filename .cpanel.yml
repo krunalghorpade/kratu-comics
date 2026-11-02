@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kratexin/kratu.kratex.in/
+    - /bin/cp -R public/. $DEPLOYPATH
