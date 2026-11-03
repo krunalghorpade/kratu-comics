@@ -71,6 +71,77 @@
           "height": 1350
         }
       ]
+    },
+    {
+      "id": "002",
+      "number": 2,
+      "title": "One Comment. Full Production.",
+      "status": "published",
+      "approved": true,
+      "version": "v1",
+      "thumbnail": "episodes/002-v1/page-01.webp",
+      "panels": [
+        {
+          "src": "episodes/002-v1/page-01.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 1 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-02.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 2 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-03.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 3 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-04.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 4 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-05.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 5 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-06.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 6 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-07.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 7 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-08.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 8 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-09.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 9 of 10",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "src": "episodes/002-v1/page-10.webp",
+          "alt": "KRATU HERO \u2014 One Comment. Full Production. \u2014 page 10 of 10",
+          "width": 1122,
+          "height": 1402
+        }
+      ]
     }
   ]
 }
